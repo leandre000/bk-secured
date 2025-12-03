@@ -1,0 +1,16 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="64" height="64" rx="12" fill="url(#gradient)"/>
+  <defs>
+    <linearGradient id="gradient" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1e40af"/>
+      <stop offset="100%" stop-color="#3b82f6"/>
+    </linearGradient>
+  </defs>
+  <!-- Shield with lock icon -->
+  <path d="M32 8L16 14V28C16 38 22 46 28 50L32 52L36 50C42 46 48 38 48 28V14L32 8Z" fill="white" fill-opacity="0.95"/>
+  <path d="M32 8L16 14V28C16 38 22 46 28 50L32 52L36 50C42 46 48 38 48 28V14L32 8Z" stroke="#1e40af" stroke-width="1.5" stroke-linejoin="round"/>
+  <!-- Lock icon inside shield -->
+  <rect x="26" y="32" width="12" height="10" rx="2" fill="#1e40af"/>
+  <path d="M28 32V28C28 25.7909 29.7909 24 32 24C34.2091 24 36 25.7909 36 28V32" stroke="white" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="32" cy="37" r="1.5" fill="white"/>
+</svg>
