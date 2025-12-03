@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-inter);
+  --font-heading: var(--font-outfit);
+  --font-mono: var(--font-geist-mono);
+
+  /* Bank of Kigali Brand Colors */
+  --color-primary-50: #eef6ff;
+  --color-primary-100: #d9eaff;
+  --color-primary-200: #bcdbff;
+  --color-primary-300: #8ec4ff;
+  --color-primary-400: #59a2ff;
+  --color-primary-500: #2e7aff;
+  --color-primary-600: #034EA2;
+  /* Official BK Blue */
+  --color-primary-700: #023e8a;
+  --color-primary-800: #023370;
+  --color-primary-900: #062b5b;
+  --color-primary-950: #041b3d;
+
+  /* Custom Surface Colors */
+  --color-surface-light: #fdfefe;
+  /* User requested off-white */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  letter-spacing: -0.011em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-outfit), -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+}

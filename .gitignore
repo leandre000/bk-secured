@@ -65,3 +65,4 @@ logs/
 temp-repo/
 generate-commits.ps1
 create-commits.ps1
+.env*.local
