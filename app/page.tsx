@@ -83,95 +83,44 @@ export default function Home() {
       </nav>
 
       {/* Professional Banking Hero Section */}
-      <section className="relative pt-32 pb-24 lg:pt-40 lg:pb-32 overflow-hidden bg-gradient-to-br from-slate-50 via-white to-primary-50/30">
-        {/* Subtle background pattern */}
-        <div className="absolute inset-0 opacity-[0.02]">
-          <div className="absolute inset-0" style={{
-            backgroundImage: `radial-gradient(circle at 2px 2px, #034EA2 1px, transparent 0)`,
-            backgroundSize: '40px 40px'
-          }}></div>
-        </div>
-        
-        {/* Elegant gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-primary-600/5 via-transparent to-primary-400/5" />
-        
+      <section className="relative pt-32 pb-24 lg:pt-40 lg:pb-32 overflow-hidden bg-gray-50">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Left Content */}
-            <div className="text-center lg:text-left">
-              <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary-50 border border-primary-100 text-primary-700 text-base lg:text-lg font-semibold mb-6">
-                <Shield className="h-5 w-5" />
-                <span>Bank-Grade Security & Protection</span>
-              </div>
-              <h1 className="text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight mb-6 text-slate-900 leading-[1.1]">
-                Your Money, <br />
-                <span className="text-primary-600">Secured & Protected</span>
-              </h1>
-              <p className="text-xl lg:text-2xl text-slate-600 mb-8 leading-relaxed max-w-xl mx-auto lg:mx-0">
-                Experience next-generation banking security with real-time fraud detection, 
-                advanced encryption, and 24/7 monitoring. Your financial safety is our priority.
-              </p>
-              <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-10">
-                <Link
-                  href="/auth/signup"
-                  className="w-full sm:w-auto px-10 py-5 bg-primary-600 hover:bg-primary-700 text-white rounded-xl font-semibold text-lg lg:text-xl transition-all shadow-lg hover:shadow-xl hover:shadow-primary-500/30 flex items-center justify-center gap-2"
-                >
-                  Open Account
-                  <ArrowRight className="h-6 w-6" />
-                </Link>
-                <Link
-                  href="/auth/signin"
-                  className="w-full sm:w-auto px-10 py-5 bg-white hover:bg-slate-50 text-slate-700 rounded-xl font-semibold text-lg lg:text-xl transition-all border-2 border-slate-200 hover:border-primary-200 shadow-sm"
-                >
-                  Sign In
-                </Link>
-              </div>
-              {/* Trust Indicators */}
-              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-6 text-base lg:text-lg text-slate-600">
-                <div className="flex items-center gap-2">
-                  <CheckCircle className="h-6 w-6 text-green-600" />
-                  <span className="font-semibold">FDIC Insured</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Lock className="h-6 w-6 text-primary-600" />
-                  <span className="font-semibold">256-bit Encryption</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Shield className="h-6 w-6 text-primary-600" />
-                  <span className="font-semibold">SOC 2 Certified</span>
-                </div>
-              </div>
+          <div className="max-w-4xl mx-auto text-center">
+            <h1 className="text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight mb-6 text-gray-900 leading-[1.1]">
+              Secure Banking, <br />
+              <span className="text-gray-800">Simplified</span>
+            </h1>
+            <p className="text-xl lg:text-2xl text-gray-600 mb-10 leading-relaxed max-w-2xl mx-auto">
+              Manage your finances with confidence. Advanced security meets intuitive design in one powerful banking platform.
+            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+              <Link
+                href="/auth/signup"
+                className="w-full sm:w-auto px-10 py-5 bg-gray-900 hover:bg-gray-800 text-white rounded-lg font-semibold text-lg lg:text-xl transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2"
+              >
+                Open Account
+                <ArrowRight className="h-6 w-6" />
+              </Link>
+              <Link
+                href="/auth/signin"
+                className="w-full sm:w-auto px-10 py-5 bg-white hover:bg-gray-50 text-gray-900 rounded-lg font-semibold text-lg lg:text-xl transition-all border-2 border-gray-200 hover:border-gray-300 shadow-sm"
+              >
+                Sign In
+              </Link>
             </div>
-            
-            {/* Right Visual - Banking Dashboard Preview */}
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary-400/20 to-primary-600/20 rounded-3xl blur-3xl transform rotate-6"></div>
-              <div className="relative bg-white rounded-2xl shadow-2xl border border-slate-200 overflow-hidden">
-                <div className="bg-gradient-to-r from-primary-600 to-primary-700 p-4 flex items-center gap-3">
-                  <div className="h-3 w-3 rounded-full bg-white/30"></div>
-                  <div className="h-3 w-3 rounded-full bg-white/30"></div>
-                  <div className="h-3 w-3 rounded-full bg-white/30"></div>
-                  <div className="flex-1"></div>
-                  <Shield className="h-5 w-5 text-white" />
-                </div>
-                <div className="p-8 bg-slate-50">
-                  <div className="space-y-4">
-                    <div className="bg-white rounded-xl p-6 shadow-sm border border-slate-100">
-                      <div className="text-sm text-slate-500 mb-2">Account Balance</div>
-                      <div className="text-4xl font-bold text-slate-900">$24,589.32</div>
-                    </div>
-                    <div className="grid grid-cols-2 gap-4">
-                      <div className="bg-white rounded-xl p-4 shadow-sm border border-slate-100">
-                        <div className="text-xs text-slate-500 mb-1">Recent Transactions</div>
-                        <div className="text-2xl font-bold text-slate-900">12</div>
-                      </div>
-                      <div className="bg-white rounded-xl p-4 shadow-sm border border-slate-100">
-                        <div className="text-xs text-slate-500 mb-1">Security Score</div>
-                        <div className="text-2xl font-bold text-green-600">98%</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+            {/* Trust Indicators */}
+            <div className="flex flex-wrap items-center justify-center gap-8 text-base lg:text-lg text-gray-700">
+              <div className="flex items-center gap-2">
+                <CheckCircle className="h-5 w-5 text-green-600" />
+                <span className="font-medium">FDIC Insured</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Lock className="h-5 w-5 text-gray-800" />
+                <span className="font-medium">256-bit Encryption</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Shield className="h-5 w-5 text-gray-800" />
+                <span className="font-medium">SOC 2 Certified</span>
               </div>
             </div>
           </div>
@@ -179,7 +128,7 @@ export default function Home() {
       </section>
 
       {/* Banking Statistics Section */}
-      <section className="py-20 bg-white border-y border-slate-100">
+      <section className="py-20 bg-white border-y border-gray-200">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
@@ -201,7 +150,7 @@ export default function Home() {
       </section>
 
       {/* Banking Features Grid */}
-      <section id="features" className="py-24 bg-gradient-to-b from-white to-slate-50">
+      <section id="features" className="py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-5xl lg:text-6xl font-bold mb-4 text-slate-900">Why Choose BK Secured?</h2>
@@ -227,42 +176,14 @@ export default function Home() {
                 description: "Biometric authentication, two-factor verification, and behavioral analysis work together to keep your account secure 24/7."
               }
             ].map((feature, index) => (
-              <div key={index} className="p-8 rounded-2xl bg-white border border-slate-200 shadow-lg hover:shadow-xl hover:border-primary-200 transition-all group">
-                <div className="h-18 w-18 bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-md">
-                  <feature.icon className="h-9 w-9 text-white" />
+              <div key={index} className="p-8 rounded-lg bg-white border border-gray-200 shadow-sm hover:shadow-md transition-all">
+                <div className="h-16 w-16 bg-gray-100 rounded-lg flex items-center justify-center mb-6">
+                  <feature.icon className="h-8 w-8 text-gray-800" />
                 </div>
-                <h3 className="text-3xl font-bold text-slate-900 mb-4">{feature.title}</h3>
-                <p className="text-slate-600 leading-relaxed text-lg lg:text-xl">
+                <h3 className="text-3xl font-bold text-gray-900 mb-4">{feature.title}</h3>
+                <p className="text-gray-600 leading-relaxed text-lg lg:text-xl">
                   {feature.description}
                 </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Platform Integrations */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold mb-4 text-slate-900">Seamless Integration</h2>
-            <p className="text-slate-600 max-w-2xl mx-auto">
-              Connect with your existing tools and platforms in minutes. No complex setup required.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
-            {[
-              { icon: Database, name: "PostgreSQL" },
-              { icon: Cloud, name: "AWS" },
-              { icon: Server, name: "Azure" },
-              { icon: Code, name: "REST API" },
-              { icon: BarChart3, name: "Analytics" },
-              { icon: Globe, name: "Webhooks" }
-            ].map((platform, index) => (
-              <div key={index} className="flex flex-col items-center justify-center p-6 rounded-xl bg-surface-light border border-slate-200 hover:border-primary-200 hover:shadow-md transition-all group">
-                <platform.icon className="text-[#162da4] h-10 w-10 group-hover:text-primary-600 transition-colors mb-3" />
-                <span className="text-sm font-medium text-slate-700">{platform.name}</span>
               </div>
             ))}
           </div>
@@ -306,12 +227,12 @@ export default function Home() {
                 color: "from-primary-500 to-primary-600"
               }
             ].map((service, index) => (
-              <div key={index} className="bg-gradient-to-br from-slate-50 to-white rounded-2xl p-8 border border-slate-200 shadow-lg hover:shadow-xl transition-all group">
-                <div className={`h-18 w-18 bg-gradient-to-br ${service.color} rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-lg`}>
-                  <service.icon className="h-9 w-9 text-white" />
+              <div key={index} className="bg-white rounded-lg p-8 border border-gray-200 shadow-sm hover:shadow-md transition-all">
+                <div className="h-16 w-16 bg-gray-100 rounded-lg flex items-center justify-center mb-6">
+                  <service.icon className="h-8 w-8 text-gray-800" />
                 </div>
-                <h3 className="text-3xl font-bold text-slate-900 mb-4">{service.title}</h3>
-                <p className="text-slate-600 leading-relaxed text-lg lg:text-xl">{service.description}</p>
+                <h3 className="text-3xl font-bold text-gray-900 mb-4">{service.title}</h3>
+                <p className="text-gray-600 leading-relaxed text-lg lg:text-xl">{service.description}</p>
               </div>
             ))}
           </div>
