@@ -11,11 +11,11 @@ export default function Header() {
 
   return (
     <>
-      <header className="bg-white border-b border-slate-200 px-6 py-5 shadow-sm">
+      <header className="bg-white border-b border-slate-200 px-6 py-6 shadow-sm">
         <div className="flex items-center justify-between">
           <div>
-            <h1 className="text-3xl font-bold text-slate-900 tracking-tight">Welcome Back</h1>
-            <p className="text-sm text-slate-500 mt-1">Manage your accounts and transactions securely</p>
+            <h1 className="text-4xl lg:text-5xl font-bold text-slate-900 tracking-tight">Welcome Back</h1>
+            <p className="text-base lg:text-lg text-slate-500 mt-2">Manage your accounts and transactions securely</p>
           </div>
           
           <div className="flex items-center gap-4">
@@ -25,7 +25,7 @@ export default function Header() {
               <input
                 type="text"
                 placeholder="Search transactions, accounts..."
-                className="pl-11 pr-4 py-2.5 w-64 border border-slate-200 text-slate-900 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500/20 focus:border-primary-500 bg-slate-50 text-sm"
+                className="pl-11 pr-4 py-3 w-64 border border-slate-200 text-slate-900 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500/20 focus:border-primary-500 bg-slate-50 text-base"
               />
             </div>
             

@@ -43,37 +43,37 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
             <div className="flex items-center gap-3">
-              <div className="h-10 w-10 bg-primary-600 rounded-xl flex items-center justify-center shadow-md">
-                <Shield className="h-6 w-6 text-white" />
+              <div className="h-12 w-12 bg-primary-600 rounded-xl flex items-center justify-center shadow-md">
+                <Shield className="h-7 w-7 text-white" />
               </div>
               <div>
-                <span className="text-2xl font-bold text-slate-900 tracking-tight">
+                <span className="text-3xl lg:text-4xl font-bold text-slate-900 tracking-tight">
                   BK Secured
                 </span>
-                <p className="text-xs text-slate-500 -mt-1">Banking Security Platform</p>
+                <p className="text-sm text-slate-500 -mt-1">Banking Security Platform</p>
               </div>
             </div>
             <div className="hidden md:flex items-center gap-8">
-              <Link href="#features" className="text-sm font-semibold text-slate-700 hover:text-primary-600 transition-colors">
+              <Link href="#features" className="text-base lg:text-lg font-semibold text-slate-700 hover:text-primary-600 transition-colors">
                 Features
               </Link>
-              <Link href="#security" className="text-sm font-semibold text-slate-700 hover:text-primary-600 transition-colors">
+              <Link href="#security" className="text-base lg:text-lg font-semibold text-slate-700 hover:text-primary-600 transition-colors">
                 Security
               </Link>
-              <Link href="#about" className="text-sm font-semibold text-slate-700 hover:text-primary-600 transition-colors">
+              <Link href="#about" className="text-base lg:text-lg font-semibold text-slate-700 hover:text-primary-600 transition-colors">
                 About
               </Link>
             </div>
             <div className="flex items-center gap-4">
               <Link 
                 href="/auth/signin"
-                className="text-sm font-semibold text-slate-700 hover:text-primary-600 transition-colors px-4 py-2"
+                className="text-base lg:text-lg font-semibold text-slate-700 hover:text-primary-600 transition-colors px-4 py-2"
               >
                 Sign In
               </Link>
               <Link
                 href="/auth/signup"
-                className="px-6 py-2.5 text-sm font-semibold bg-primary-600 hover:bg-primary-700 text-white rounded-lg transition-all shadow-md hover:shadow-lg hover:shadow-primary-500/40"
+                className="px-6 py-3 text-base lg:text-lg font-semibold bg-primary-600 hover:bg-primary-700 text-white rounded-lg transition-all shadow-md hover:shadow-lg hover:shadow-primary-500/40"
               >
                 Open Account
               </Link>
@@ -99,46 +99,46 @@ export default function Home() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
             <div className="text-center lg:text-left">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-50 border border-primary-100 text-primary-700 text-sm font-semibold mb-6">
-                <Shield className="h-4 w-4" />
+              <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary-50 border border-primary-100 text-primary-700 text-base lg:text-lg font-semibold mb-6">
+                <Shield className="h-5 w-5" />
                 <span>Bank-Grade Security & Protection</span>
               </div>
-              <h1 className="text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight mb-6 text-slate-900 leading-[1.1]">
+              <h1 className="text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight mb-6 text-slate-900 leading-[1.1]">
                 Your Money, <br />
                 <span className="text-primary-600">Secured & Protected</span>
               </h1>
-              <p className="text-xl text-slate-600 mb-8 leading-relaxed max-w-xl mx-auto lg:mx-0">
+              <p className="text-xl lg:text-2xl text-slate-600 mb-8 leading-relaxed max-w-xl mx-auto lg:mx-0">
                 Experience next-generation banking security with real-time fraud detection, 
                 advanced encryption, and 24/7 monitoring. Your financial safety is our priority.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-10">
                 <Link
                   href="/auth/signup"
-                  className="w-full sm:w-auto px-8 py-4 bg-primary-600 hover:bg-primary-700 text-white rounded-xl font-semibold text-base transition-all shadow-lg hover:shadow-xl hover:shadow-primary-500/30 flex items-center justify-center gap-2"
+                  className="w-full sm:w-auto px-10 py-5 bg-primary-600 hover:bg-primary-700 text-white rounded-xl font-semibold text-lg lg:text-xl transition-all shadow-lg hover:shadow-xl hover:shadow-primary-500/30 flex items-center justify-center gap-2"
                 >
                   Open Account
-                  <ArrowRight className="h-5 w-5" />
+                  <ArrowRight className="h-6 w-6" />
                 </Link>
                 <Link
                   href="/auth/signin"
-                  className="w-full sm:w-auto px-8 py-4 bg-white hover:bg-slate-50 text-slate-700 rounded-xl font-semibold text-base transition-all border-2 border-slate-200 hover:border-primary-200 shadow-sm"
+                  className="w-full sm:w-auto px-10 py-5 bg-white hover:bg-slate-50 text-slate-700 rounded-xl font-semibold text-lg lg:text-xl transition-all border-2 border-slate-200 hover:border-primary-200 shadow-sm"
                 >
                   Sign In
                 </Link>
               </div>
               {/* Trust Indicators */}
-              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-6 text-sm text-slate-600">
+              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-6 text-base lg:text-lg text-slate-600">
                 <div className="flex items-center gap-2">
-                  <CheckCircle className="h-5 w-5 text-green-600" />
-                  <span className="font-medium">FDIC Insured</span>
+                  <CheckCircle className="h-6 w-6 text-green-600" />
+                  <span className="font-semibold">FDIC Insured</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Lock className="h-5 w-5 text-primary-600" />
-                  <span className="font-medium">256-bit Encryption</span>
+                  <Lock className="h-6 w-6 text-primary-600" />
+                  <span className="font-semibold">256-bit Encryption</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Shield className="h-5 w-5 text-primary-600" />
-                  <span className="font-medium">SOC 2 Certified</span>
+                  <Shield className="h-6 w-6 text-primary-600" />
+                  <span className="font-semibold">SOC 2 Certified</span>
                 </div>
               </div>
             </div>
@@ -189,11 +189,11 @@ export default function Home() {
               { icon: Shield, value: "99.99%", label: "Uptime Guarantee", color: "text-primary-600" }
             ].map((stat, index) => (
               <div key={index} className="text-center">
-                <div className="inline-flex items-center justify-center w-14 h-14 bg-primary-50 rounded-xl mb-4 shadow-sm">
-                  <stat.icon className={`h-7 w-7 ${stat.color}`} />
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-primary-50 rounded-xl mb-4 shadow-sm">
+                  <stat.icon className={`h-8 w-8 ${stat.color}`} />
                 </div>
-                <div className="text-4xl font-bold text-slate-900 mb-2">{stat.value}</div>
-                <div className="text-base font-medium text-slate-600">{stat.label}</div>
+                <div className="text-5xl lg:text-6xl font-bold text-slate-900 mb-2">{stat.value}</div>
+                <div className="text-lg lg:text-xl font-semibold text-slate-600">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -204,8 +204,8 @@ export default function Home() {
       <section id="features" className="py-24 bg-gradient-to-b from-white to-slate-50">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold mb-4 text-slate-900">Why Choose BK Secured?</h2>
-            <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+            <h2 className="text-5xl lg:text-6xl font-bold mb-4 text-slate-900">Why Choose BK Secured?</h2>
+            <p className="text-2xl lg:text-3xl text-slate-600 max-w-2xl mx-auto">
               Experience banking security that sets the industry standard
             </p>
           </div>
@@ -228,11 +228,11 @@ export default function Home() {
               }
             ].map((feature, index) => (
               <div key={index} className="p-8 rounded-2xl bg-white border border-slate-200 shadow-lg hover:shadow-xl hover:border-primary-200 transition-all group">
-                <div className="h-16 w-16 bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-md">
-                  <feature.icon className="h-8 w-8 text-white" />
+                <div className="h-18 w-18 bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-md">
+                  <feature.icon className="h-9 w-9 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold text-slate-900 mb-4">{feature.title}</h3>
-                <p className="text-slate-600 leading-relaxed text-base">
+                <h3 className="text-3xl font-bold text-slate-900 mb-4">{feature.title}</h3>
+                <p className="text-slate-600 leading-relaxed text-lg lg:text-xl">
                   {feature.description}
                 </p>
               </div>
@@ -273,8 +273,8 @@ export default function Home() {
       <section id="security" className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold mb-4 text-slate-900">Complete Banking Solutions</h2>
-            <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+            <h2 className="text-5xl lg:text-6xl font-bold mb-4 text-slate-900">Complete Banking Solutions</h2>
+            <p className="text-2xl lg:text-3xl text-slate-600 max-w-2xl mx-auto">
               Everything you need for secure, modern banking
             </p>
           </div>
@@ -307,11 +307,11 @@ export default function Home() {
               }
             ].map((service, index) => (
               <div key={index} className="bg-gradient-to-br from-slate-50 to-white rounded-2xl p-8 border border-slate-200 shadow-lg hover:shadow-xl transition-all group">
-                <div className={`h-16 w-16 bg-gradient-to-br ${service.color} rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-lg`}>
-                  <service.icon className="h-8 w-8 text-white" />
+                <div className={`h-18 w-18 bg-gradient-to-br ${service.color} rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-lg`}>
+                  <service.icon className="h-9 w-9 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold text-slate-900 mb-4">{service.title}</h3>
-                <p className="text-slate-600 leading-relaxed text-base">{service.description}</p>
+                <h3 className="text-3xl font-bold text-slate-900 mb-4">{service.title}</h3>
+                <p className="text-slate-600 leading-relaxed text-lg lg:text-xl">{service.description}</p>
               </div>
             ))}
           </div>
@@ -346,8 +346,8 @@ export default function Home() {
       <section className="py-24 bg-gradient-to-b from-slate-50 to-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold mb-4 text-slate-900">Your Banking Dashboard</h2>
-            <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+            <h2 className="text-5xl lg:text-6xl font-bold mb-4 text-slate-900">Your Banking Dashboard</h2>
+            <p className="text-2xl lg:text-3xl text-slate-600 max-w-2xl mx-auto">
               Monitor your accounts, track transactions, and manage your finances all in one secure place.
             </p>
           </div>
@@ -394,23 +394,23 @@ export default function Home() {
                 </div>
                 <div className="bg-white rounded-xl p-6 shadow-md border border-slate-100">
                   <div className="flex items-center justify-between mb-4">
-                    <h3 className="text-lg font-bold text-slate-900">Recent Transactions</h3>
-                    <button className="text-sm text-primary-600 font-semibold hover:text-primary-700">View All</button>
+                    <h3 className="text-xl lg:text-2xl font-bold text-slate-900">Recent Transactions</h3>
+                    <button className="text-base lg:text-lg text-primary-600 font-semibold hover:text-primary-700">View All</button>
                   </div>
                   <div className="space-y-3">
                     {['Payment to Amazon', 'Salary Deposit', 'Transfer to Savings'].map((item, i) => (
                       <div key={i} className="flex items-center justify-between py-3 border-b border-slate-100 last:border-0">
                         <div className="flex items-center gap-3">
-                          <div className="h-10 w-10 rounded-full bg-primary-100 flex items-center justify-center">
-                            <Activity className="h-5 w-5 text-primary-600" />
+                          <div className="h-12 w-12 rounded-full bg-primary-100 flex items-center justify-center">
+                            <Activity className="h-6 w-6 text-primary-600" />
                           </div>
                           <div>
-                            <div className="font-semibold text-slate-900">{item}</div>
-                            <div className="text-xs text-slate-500">Today, 2:30 PM</div>
+                            <div className="font-semibold text-lg text-slate-900">{item}</div>
+                            <div className="text-sm text-slate-500">Today, 2:30 PM</div>
                           </div>
                         </div>
                         <div className="text-right">
-                          <div className="font-bold text-slate-900">${(Math.random() * 500 + 50).toFixed(2)}</div>
+                          <div className="font-bold text-lg text-slate-900">${(Math.random() * 500 + 50).toFixed(2)}</div>
                         </div>
                       </div>
                     ))}
