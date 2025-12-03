@@ -49,7 +49,7 @@ export default function Home() {
               <div>
                 <span className="text-3xl lg:text-4xl font-bold text-slate-900 tracking-tight">
                   BK Secured
-                </span>
+              </span>
                 <p className="text-sm text-slate-500 -mt-1">Banking Security Platform</p>
               </div>
             </div>
@@ -83,108 +83,135 @@ export default function Home() {
       </nav>
 
       {/* Premium Banking Hero Section */}
-      <section className="relative pt-24 pb-20 lg:pt-32 lg:pb-28 overflow-hidden bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <section className="relative pt-20 pb-16 sm:pt-24 sm:pb-20 md:pt-28 md:pb-24 lg:pt-32 lg:pb-28 overflow-hidden bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
             {/* Left Content */}
-            <div className="text-center lg:text-left">
-              <h1 className="text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight mb-6 text-gray-900 leading-[1.1]">
-                Easy Way to Manage <br />
+            <div className="text-center lg:text-left order-2 lg:order-1">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-bold tracking-tight mb-4 sm:mb-6 text-gray-900 leading-[1.1]">
+                Easy Way to Manage <br className="hidden sm:block" />
                 <span className="text-primary-600">Your Banking</span>
-              </h1>
-              <p className="text-xl lg:text-2xl text-gray-600 mb-8 leading-relaxed">
+            </h1>
+              <p className="text-lg sm:text-xl md:text-xl lg:text-2xl text-gray-600 mb-6 sm:mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0">
                 Experience modern banking with real-time balance tracking, instant transfers, and advanced security. Your money, your control.
-              </p>
-              <div className="flex flex-col sm:flex-row items-center lg:items-start gap-4 mb-10">
-                <Link
-                  href="/auth/signup"
-                  className="w-full sm:w-auto px-8 py-4 bg-primary-600 hover:bg-primary-700 text-white rounded-xl font-semibold text-lg transition-all shadow-lg hover:shadow-xl flex items-center justify-center gap-2"
-                >
+            </p>
+              <div className="flex flex-col sm:flex-row items-center lg:items-start gap-3 sm:gap-4 mb-8 sm:mb-10">
+              <Link
+                href="/auth/signup"
+                  className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-primary-600 hover:bg-primary-700 text-white rounded-xl font-semibold text-base sm:text-lg transition-all shadow-lg hover:shadow-xl flex items-center justify-center gap-2"
+              >
                   Open Account
-                  <ArrowRight className="h-5 w-5" />
-                </Link>
-                <Link
+                  <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5" />
+              </Link>
+              <Link
                   href="/auth/signin"
-                  className="w-full sm:w-auto px-8 py-4 bg-white hover:bg-gray-50 text-gray-900 rounded-xl font-semibold text-lg transition-all border-2 border-gray-300 hover:border-gray-400 shadow-sm"
-                >
+                  className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-white hover:bg-gray-50 text-gray-900 rounded-xl font-semibold text-base sm:text-lg transition-all border-2 border-gray-300 hover:border-gray-400 shadow-sm"
+              >
                   How It Works
-                </Link>
+              </Link>
               </div>
               {/* Trust Indicators */}
-              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-6 text-base text-gray-700">
+              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 sm:gap-6 text-sm sm:text-base text-gray-700">
                 <div className="flex items-center gap-2">
-                  <CheckCircle className="h-5 w-5 text-green-600" />
+                  <CheckCircle className="h-4 w-4 sm:h-5 sm:w-5 text-green-600" />
                   <span className="font-medium">FDIC Insured</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Lock className="h-5 w-5 text-gray-800" />
+                  <Lock className="h-4 w-4 sm:h-5 sm:w-5 text-gray-800" />
                   <span className="font-medium">256-bit Encryption</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Shield className="h-5 w-5 text-gray-800" />
+                  <Shield className="h-4 w-4 sm:h-5 sm:w-5 text-gray-800" />
                   <span className="font-medium">SOC 2 Certified</span>
                 </div>
               </div>
             </div>
             
-            {/* Right Visual - Banking App Mockup */}
-            <div className="relative hidden lg:block">
-              <div className="relative">
-                {/* Phone Frame */}
-                <div className="relative mx-auto w-80 h-[600px]">
+            {/* Right Visual - Enhanced Banking App Mockup */}
+            <div className="relative order-1 lg:order-2">
+              <div className="relative flex justify-center lg:justify-end">
+                {/* Phone Frame - Responsive Sizing */}
+                <div className="relative mx-auto lg:mx-0 w-64 h-[520px] sm:w-72 sm:h-[580px] md:w-80 md:h-[640px] lg:w-80 lg:h-[680px]">
                   {/* Phone Outline */}
-                  <div className="absolute inset-0 bg-gray-900 rounded-[3rem] p-2 shadow-2xl">
-                    <div className="w-full h-full bg-white rounded-[2.5rem] overflow-hidden relative">
+                  <div className="absolute inset-0 bg-gradient-to-br from-gray-800 to-gray-900 rounded-[2.5rem] sm:rounded-[3rem] p-1.5 sm:p-2 shadow-2xl">
+                    <div className="w-full h-full bg-white rounded-[2rem] sm:rounded-[2.5rem] overflow-hidden relative">
                       {/* Status Bar */}
-                      <div className="bg-gray-900 text-white text-xs px-6 py-2 flex justify-between items-center">
-                        <span>9:41</span>
-                        <div className="flex gap-1">
+                      <div className="bg-gradient-to-r from-gray-800 to-gray-900 text-white text-[10px] sm:text-xs px-4 sm:px-6 py-1.5 sm:py-2 flex justify-between items-center">
+                        <span className="font-medium">9:41</span>
+                        <div className="flex gap-0.5 sm:gap-1 items-center">
                           <div className="w-1 h-1 rounded-full bg-white"></div>
                           <div className="w-1 h-1 rounded-full bg-white"></div>
-                          <div className="w-1 h-1 rounded-full bg-white"></div>
+                          <div className="w-1.5 h-1 rounded-full bg-white"></div>
                         </div>
                       </div>
                       
-                      {/* App Content */}
-                      <div className="p-6 bg-gradient-to-br from-gray-50 to-white h-full">
-                        {/* Header */}
-                        <div className="mb-6">
-                          <div className="text-sm text-gray-500 mb-1">Total Balance</div>
-                          <div className="text-4xl font-bold text-gray-900">$24,589.32</div>
+                      {/* App Content - Scrollable */}
+                      <div className="p-3 sm:p-4 md:p-6 bg-gradient-to-br from-gray-50 via-white to-gray-50 h-full overflow-y-auto">
+                        {/* Header with Balance */}
+                        <div className="mb-4 sm:mb-6">
+                          <div className="text-xs sm:text-sm text-gray-500 mb-1">Total Balance</div>
+                          <div className="text-3xl sm:text-4xl font-bold text-gray-900">$24,589.32</div>
+                          <div className="flex items-center gap-1 mt-1">
+                            <TrendingUp className="h-3 w-3 sm:h-4 sm:w-4 text-green-600" />
+                            <span className="text-xs sm:text-sm text-green-600 font-medium">+2.4% this month</span>
+                          </div>
                         </div>
                         
-                        {/* Quick Actions */}
-                        <div className="grid grid-cols-4 gap-3 mb-6">
-                          {['Transfer', 'Pay', 'Top Up', 'More'].map((action, i) => (
-                            <div key={i} className="text-center">
-                              <div className="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-2">
-                                <Activity className="h-6 w-6 text-primary-600" />
+                        {/* Quick Actions with Icons */}
+                        <div className="grid grid-cols-4 gap-2 sm:gap-3 mb-4 sm:mb-6">
+                          {[
+                            { name: 'Transfer', icon: ArrowRight, color: 'bg-blue-100 text-blue-600' },
+                            { name: 'Pay', icon: Activity, color: 'bg-green-100 text-green-600' },
+                            { name: 'Top Up', icon: TrendingUp, color: 'bg-purple-100 text-purple-600' },
+                            { name: 'More', icon: Shield, color: 'bg-gray-100 text-gray-600' }
+                          ].map((action, i) => {
+                            const Icon = action.icon;
+                            return (
+                              <div key={i} className="text-center">
+                                <div className={`w-10 h-10 sm:w-12 sm:h-12 ${action.color} rounded-full flex items-center justify-center mx-auto mb-1 sm:mb-2 shadow-sm`}>
+                                  <Icon className="h-4 w-4 sm:h-5 sm:w-5" />
+                                </div>
+                                <span className="text-[10px] sm:text-xs text-gray-600 font-medium">{action.name}</span>
                               </div>
-                              <span className="text-xs text-gray-600">{action}</span>
-                            </div>
-                          ))}
+                            );
+                          })}
+                        </div>
+                        
+                        {/* Savings Goal Card */}
+                        <div className="mb-4 sm:mb-6 bg-gradient-to-br from-primary-50 to-primary-100 rounded-xl p-3 sm:p-4 border border-primary-200">
+                          <div className="flex items-center justify-between mb-2">
+                            <span className="text-xs sm:text-sm font-semibold text-gray-900">Savings Goal</span>
+                            <span className="text-xs sm:text-sm font-bold text-primary-600">98%</span>
+                          </div>
+                          <div className="w-full bg-white rounded-full h-2 mb-1">
+                            <div className="bg-gradient-to-r from-primary-500 to-primary-600 h-2 rounded-full" style={{ width: '98%' }}></div>
+                          </div>
+                          <div className="text-xs text-gray-600">$9,800 of $10,000</div>
                         </div>
                         
                         {/* Recent Transactions */}
-                        <div className="mb-4">
-                          <h3 className="text-sm font-semibold text-gray-900 mb-3">Recent Transactions</h3>
-                          <div className="space-y-3">
+                        <div className="mb-3 sm:mb-4">
+                          <div className="flex items-center justify-between mb-2 sm:mb-3">
+                            <h3 className="text-xs sm:text-sm font-semibold text-gray-900">Recent Transactions</h3>
+                            <span className="text-[10px] sm:text-xs text-primary-600 font-medium">View All</span>
+                          </div>
+                          <div className="space-y-2 sm:space-y-3">
                             {[
-                              { name: 'Amazon Purchase', amount: '-$89.50', time: '2h ago', icon: '🛒' },
-                              { name: 'Salary Deposit', amount: '+$3,500.00', time: '1d ago', icon: '💰' },
-                              { name: 'Coffee Shop', amount: '-$4.75', time: '2d ago', icon: '☕' }
+                              { name: 'Amazon Purchase', amount: '-$89.50', time: '2h ago', icon: '🛒', type: 'expense' },
+                              { name: 'Salary Deposit', amount: '+$3,500.00', time: '1d ago', icon: '💰', type: 'income' },
+                              { name: 'Coffee Shop', amount: '-$4.75', time: '2d ago', icon: '☕', type: 'expense' }
                             ].map((tx, i) => (
-                              <div key={i} className="flex items-center justify-between p-3 bg-white rounded-lg border border-gray-100">
-                                <div className="flex items-center gap-3">
-                                  <div className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-lg">
+                              <div key={i} className="flex items-center justify-between p-2 sm:p-3 bg-white rounded-lg border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                                <div className="flex items-center gap-2 sm:gap-3 flex-1 min-w-0">
+                                  <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gray-100 rounded-full flex items-center justify-center text-sm sm:text-lg flex-shrink-0">
                                     {tx.icon}
                                   </div>
-                                  <div>
-                                    <div className="text-sm font-semibold text-gray-900">{tx.name}</div>
-                                    <div className="text-xs text-gray-500">{tx.time}</div>
+                                  <div className="min-w-0 flex-1">
+                                    <div className="text-xs sm:text-sm font-semibold text-gray-900 truncate">{tx.name}</div>
+                                    <div className="text-[10px] sm:text-xs text-gray-500">{tx.time}</div>
                                   </div>
                                 </div>
-                                <div className={`text-sm font-bold ${tx.amount.startsWith('+') ? 'text-green-600' : 'text-gray-900'}`}>
+                                <div className={`text-xs sm:text-sm font-bold ${tx.type === 'income' ? 'text-green-600' : 'text-gray-900'} flex-shrink-0 ml-2`}>
                                   {tx.amount}
                                 </div>
                               </div>
@@ -192,30 +219,47 @@ export default function Home() {
                           </div>
                         </div>
                         
-                        {/* Card Preview */}
-                        <div className="mt-4 bg-gradient-to-br from-primary-600 to-primary-700 rounded-xl p-4 text-white">
-                          <div className="flex justify-between items-start mb-4">
-                            <div>
-                              <div className="text-xs opacity-80 mb-1">Card Number</div>
-                              <div className="text-lg font-mono">**** **** **** 4567</div>
-                            </div>
-                            <Shield className="h-6 w-6 opacity-80" />
+                        {/* Spending Insights */}
+                        <div className="mb-3 sm:mb-4 bg-white rounded-xl p-3 sm:p-4 border border-gray-200">
+                          <div className="text-xs sm:text-sm font-semibold text-gray-900 mb-2">Spending This Month</div>
+                          <div className="flex items-end gap-1 h-12 mb-2">
+                            {[65, 80, 45, 90, 70, 85, 95].map((height, i) => (
+                              <div key={i} className="flex-1 bg-gradient-to-t from-primary-500 to-primary-400 rounded-t" style={{ height: `${height}%` }}></div>
+                            ))}
                           </div>
-                          <div className="flex justify-between items-end">
-                            <div>
-                              <div className="text-xs opacity-80 mb-1">Card Holder</div>
-                              <div className="text-sm font-semibold">JOHN DOE</div>
+                          <div className="text-xs text-gray-500">$2,847 spent of $5,000 budget</div>
+                        </div>
+                        
+                        {/* Card Preview */}
+                        <div className="bg-gradient-to-br from-primary-600 via-primary-700 to-primary-800 rounded-xl p-3 sm:p-4 text-white shadow-lg relative overflow-hidden">
+                          {/* Card Pattern */}
+                          <div className="absolute top-0 right-0 w-32 h-32 bg-white opacity-5 rounded-full -mr-16 -mt-16"></div>
+                          <div className="absolute bottom-0 left-0 w-24 h-24 bg-white opacity-5 rounded-full -ml-12 -mb-12"></div>
+                          
+                          <div className="relative">
+                            <div className="flex justify-between items-start mb-3 sm:mb-4">
+                              <div>
+                                <div className="text-[10px] sm:text-xs opacity-80 mb-1">Card Number</div>
+                                <div className="text-base sm:text-lg font-mono tracking-wider">**** **** **** 4567</div>
+                              </div>
+                              <Shield className="h-5 w-5 sm:h-6 sm:w-6 opacity-80" />
                             </div>
-                            <div className="text-xs opacity-80">12/25</div>
+                            <div className="flex justify-between items-end">
+                              <div>
+                                <div className="text-[10px] sm:text-xs opacity-80 mb-1">Card Holder</div>
+                                <div className="text-xs sm:text-sm font-semibold">JOHN DOE</div>
+                              </div>
+                              <div className="text-[10px] sm:text-xs opacity-80">12/25</div>
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
                   
-                  {/* Decorative Elements */}
-                  <div className="absolute -top-10 -right-10 w-32 h-32 bg-primary-100 rounded-full blur-3xl opacity-50"></div>
-                  <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-green-100 rounded-full blur-3xl opacity-30"></div>
+                  {/* Decorative Elements - Responsive */}
+                  <div className="absolute -top-6 -right-6 sm:-top-10 sm:-right-10 w-24 h-24 sm:w-32 sm:h-32 bg-primary-100 rounded-full blur-3xl opacity-50"></div>
+                  <div className="absolute -bottom-6 -left-6 sm:-bottom-10 sm:-left-10 w-32 h-32 sm:w-40 sm:h-40 bg-green-100 rounded-full blur-3xl opacity-30"></div>
                 </div>
               </div>
             </div>
@@ -664,10 +708,10 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
             {/* Brand Column */}
             <div className="space-y-4">
-            <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2">
               <Shield className="h-8 w-8 text-primary-400" />
               <span className="text-xl font-bold text-white">BK Secured</span>
-            </div>
+              </div>
               <p className="text-slate-400 text-sm leading-relaxed">
                 Next-generation banking security platform. Protecting your financial future with advanced technology and bank-grade encryption.
               </p>
