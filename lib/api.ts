@@ -1,3 +1,28 @@
+/**
+ * API Client for Backend Integration
+ * 
+ * BACKEND INTEGRATION GUIDE:
+ * ==========================
+ * 
+ * This file contains the API client that communicates with your backend.
+ * 
+ * CURRENT STATUS:
+ * - All methods currently use mock data for development
+ * - Replace TODO comments with actual API calls
+ * - Remove mock implementations once backend is ready
+ * 
+ * INTEGRATION STEPS:
+ * 1. Uncomment the actual API calls (marked with TODO)
+ * 2. Remove mock implementations
+ * 3. Test each endpoint
+ * 4. Handle errors appropriately
+ * 
+ * AUTHENTICATION:
+ * - Tokens are stored in localStorage (STORAGE_KEYS.AUTH_TOKEN)
+ * - Automatically included in Authorization header
+ * - Handle 401 errors by redirecting to login
+ */
+
 import { API_CONFIG, API_ENDPOINTS, STORAGE_KEYS, ERROR_MESSAGES } from './config';
 import type {
   ApiResponse,
@@ -18,7 +43,14 @@ import type {
   AlertFilters,
 } from './types';
 
-// API Client Class
+// ============================================================================
+// API CLIENT CLASS
+// ============================================================================
+
+/**
+ * Main API client class
+ * Handles all HTTP requests to the backend
+ */
 class ApiClient {
   private baseURL: string;
   private timeout: number;
@@ -28,7 +60,10 @@ class ApiClient {
     this.timeout = API_CONFIG.TIMEOUT;
   }
 
-  // Helper method to get auth token
+  /**
+   * Get authentication token from localStorage
+   * @returns JWT token or null
+   */
   private getAuthToken(): string | null {
     if (typeof window !== 'undefined') {
       return localStorage.getItem(STORAGE_KEYS.AUTH_TOKEN);
@@ -36,7 +71,11 @@ class ApiClient {
     return null;
   }
 
-  // Helper method to build headers
+  /**
+   * Build request headers with authentication
+   * @param includeAuth - Whether to include Authorization header
+   * @returns Headers object
+   */
   private buildHeaders(includeAuth = true): HeadersInit {
     const headers: HeadersInit = {
       'Content-Type': 'application/json',
@@ -52,7 +91,19 @@ class ApiClient {
     return headers;
   }
 
-  // Generic request method
+  /**
+   * Generic request method
+   * Handles all HTTP requests with error handling and retries
+   * 
+   * BACKEND INTEGRATION:
+   * - This method handles the actual API calls
+   * - Backend should return standard ApiResponse format
+   * - Errors should be thrown and caught by calling code
+   * 
+   * @param endpoint - API endpoint (from API_ENDPOINTS)
+   * @param options - Fetch options (method, body, etc.)
+   * @returns Promise with API response
+   */
   private async request<T>(
     endpoint: string,
     options: RequestInit = {}
@@ -71,6 +122,14 @@ class ApiClient {
       const data = await response.json();
 
       if (!response.ok) {
+        // Handle 401 Unauthorized - redirect to login
+        if (response.status === 401) {
+          if (typeof window !== 'undefined') {
+            localStorage.removeItem(STORAGE_KEYS.AUTH_TOKEN);
+            localStorage.removeItem(STORAGE_KEYS.REFRESH_TOKEN);
+            window.location.href = '/auth/signin';
+          }
+        }
         throw new Error(data.message || ERROR_MESSAGES.SERVER_ERROR);
       }
 
@@ -81,7 +140,21 @@ class ApiClient {
     }
   }
 
-  // Authentication Methods
+  // ========================================================================
+  // AUTHENTICATION METHODS
+  // ========================================================================
+
+  /**
+   * Login user
+   * 
+   * BACKEND REQUIREMENTS:
+   * - POST /auth/login
+   * - Body: { email: string, password: string }
+   * - Response: { success: true, data: { user: User, token: string, refreshToken: string } }
+   * 
+   * @param credentials - Login credentials
+   * @returns Authentication response with user and tokens
+   */
   async login(credentials: LoginRequest): Promise<ApiResponse<AuthResponse>> {
     // TODO: Replace with actual API call
     // return this.request<AuthResponse>(API_ENDPOINTS.AUTH.LOGIN, {
@@ -89,7 +162,7 @@ class ApiClient {
     //   body: JSON.stringify(credentials),
     // });
 
-    // Mock implementation for now
+    // Mock implementation - REMOVE when backend is ready
     return new Promise((resolve) => {
       setTimeout(() => {
         const mockResponse: ApiResponse<AuthResponse> = {
@@ -112,6 +185,17 @@ class ApiClient {
     });
   }
 
+  /**
+   * Register new user
+   * 
+   * BACKEND REQUIREMENTS:
+   * - POST /auth/register
+   * - Body: { firstName: string, lastName: string, email: string, password: string }
+   * - Response: { success: true, data: { user: User, token: string, refreshToken: string } }
+   * 
+   * @param userData - Registration data
+   * @returns Authentication response with user and tokens
+   */
   async register(userData: RegisterRequest): Promise<ApiResponse<AuthResponse>> {
     // TODO: Replace with actual API call
     // return this.request<AuthResponse>(API_ENDPOINTS.AUTH.REGISTER, {
@@ -119,7 +203,7 @@ class ApiClient {
     //   body: JSON.stringify(userData),
     // });
 
-    // Mock implementation for now
+    // Mock implementation - REMOVE when backend is ready
     return new Promise((resolve) => {
       setTimeout(() => {
         const mockResponse: ApiResponse<AuthResponse> = {
@@ -142,13 +226,23 @@ class ApiClient {
     });
   }
 
+  /**
+   * Logout user
+   * 
+   * BACKEND REQUIREMENTS:
+   * - POST /auth/logout
+   * - Headers: { Authorization: "Bearer <token>" }
+   * - Response: { success: true, data: null }
+   * 
+   * @returns Success response
+   */
   async logout(): Promise<ApiResponse<void>> {
     // TODO: Replace with actual API call
     // return this.request<void>(API_ENDPOINTS.AUTH.LOGOUT, {
     //   method: 'POST',
     // });
 
-    // Mock implementation for now
+    // Mock implementation - REMOVE when backend is ready
     return new Promise((resolve) => {
       setTimeout(() => {
         resolve({ success: true, data: undefined });
@@ -156,12 +250,25 @@ class ApiClient {
     });
   }
 
-  // Dashboard Methods
+  // ========================================================================
+  // DASHBOARD METHODS
+  // ========================================================================
+
+  /**
+   * Get dashboard statistics
+   * 
+   * BACKEND REQUIREMENTS:
+   * - GET /dashboard/stats
+   * - Headers: { Authorization: "Bearer <token>" }
+   * - Response: { success: true, data: DashboardStats }
+   * 
+   * @returns Dashboard statistics
+   */
   async getDashboardStats(): Promise<ApiResponse<DashboardStats>> {
     // TODO: Replace with actual API call
     // return this.request<DashboardStats>(API_ENDPOINTS.DASHBOARD.STATS);
 
-    // Mock implementation for now
+    // Mock implementation - REMOVE when backend is ready
     return new Promise((resolve) => {
       setTimeout(() => {
         resolve({
@@ -177,7 +284,24 @@ class ApiClient {
     });
   }
 
-  // Transaction Methods
+  // ========================================================================
+  // TRANSACTION METHODS
+  // ========================================================================
+
+  /**
+   * Get paginated list of transactions
+   * 
+   * BACKEND REQUIREMENTS:
+   * - GET /transactions?page=1&limit=20&status=approved&type=transfer
+   * - Headers: { Authorization: "Bearer <token>" }
+   * - Query Params: page, limit, status, type, startDate, endDate, userId
+   * - Response: { success: true, data: Transaction[], pagination: { page, limit, total, totalPages } }
+   * 
+   * @param filters - Optional filters for transactions
+   * @param page - Page number (default: 1)
+   * @param limit - Items per page (default: 20)
+   * @returns Paginated transaction list
+   */
   async getTransactions(
     filters?: TransactionFilters,
     page = 1,
@@ -187,11 +311,13 @@ class ApiClient {
     // const params = new URLSearchParams({
     //   page: page.toString(),
     //   limit: limit.toString(),
-    //   ...filters,
+    //   ...(filters && Object.entries(filters).forEach(([key, value]) => {
+    //     if (value) params.append(key, value.toString());
+    //   })),
     // });
     // return this.request<Transaction[]>(`${API_ENDPOINTS.TRANSACTIONS.LIST}?${params}`);
 
-    // Mock implementation for now
+    // Mock implementation - REMOVE when backend is ready
     return new Promise((resolve) => {
       setTimeout(() => {
         const mockTransactions: Transaction[] = [
@@ -206,7 +332,6 @@ class ApiClient {
             status: 'approved',
             timestamp: new Date().toISOString(),
           },
-          // Add more mock transactions...
         ];
 
         resolve({
@@ -223,11 +348,22 @@ class ApiClient {
     });
   }
 
+  /**
+   * Get transaction details by ID
+   * 
+   * BACKEND REQUIREMENTS:
+   * - GET /transactions/:id
+   * - Headers: { Authorization: "Bearer <token>" }
+   * - Response: { success: true, data: Transaction }
+   * 
+   * @param id - Transaction ID
+   * @returns Transaction details
+   */
   async getTransactionDetails(id: string): Promise<ApiResponse<Transaction>> {
     // TODO: Replace with actual API call
     // return this.request<Transaction>(API_ENDPOINTS.TRANSACTIONS.DETAILS.replace(':id', id));
 
-    // Mock implementation for now
+    // Mock implementation - REMOVE when backend is ready
     return new Promise((resolve) => {
       setTimeout(() => {
         resolve({
@@ -248,14 +384,31 @@ class ApiClient {
     });
   }
 
-  // Alert Methods
+  // ========================================================================
+  // ALERT METHODS
+  // ========================================================================
+
+  /**
+   * Get paginated list of security alerts
+   * 
+   * BACKEND REQUIREMENTS:
+   * - GET /alerts?page=1&limit=20&severity=high&status=investigating
+   * - Headers: { Authorization: "Bearer <token>" }
+   * - Query Params: page, limit, severity, status, userId
+   * - Response: { success: true, data: SecurityAlert[], pagination: { page, limit, total, totalPages } }
+   * 
+   * @param filters - Optional filters for alerts
+   * @param page - Page number (default: 1)
+   * @param limit - Items per page (default: 20)
+   * @returns Paginated alert list
+   */
   async getAlerts(
     filters?: AlertFilters,
     page = 1,
     limit = 20
   ): Promise<PaginatedResponse<SecurityAlert>> {
     // TODO: Replace with actual API call
-    // Mock implementation for now
+    // Mock implementation - REMOVE when backend is ready
     return new Promise((resolve) => {
       setTimeout(() => {
         const mockAlerts: SecurityAlert[] = [
@@ -269,7 +422,6 @@ class ApiClient {
             accountNumber: 'JD-****1234',
             timestamp: new Date().toISOString(),
           },
-          // Add more mock alerts...
         ];
 
         resolve({
@@ -286,10 +438,23 @@ class ApiClient {
     });
   }
 
-  // Settings Methods
+  // ========================================================================
+  // SETTINGS METHODS
+  // ========================================================================
+
+  /**
+   * Get security settings
+   * 
+   * BACKEND REQUIREMENTS:
+   * - GET /settings/security
+   * - Headers: { Authorization: "Bearer <token>" }
+   * - Response: { success: true, data: SecuritySettings }
+   * 
+   * @returns Security settings
+   */
   async getSecuritySettings(): Promise<ApiResponse<SecuritySettings>> {
     // TODO: Replace with actual API call
-    // Mock implementation for now
+    // Mock implementation - REMOVE when backend is ready
     return new Promise((resolve) => {
       setTimeout(() => {
         resolve({
@@ -305,6 +470,18 @@ class ApiClient {
     });
   }
 
+  /**
+   * Update security settings
+   * 
+   * BACKEND REQUIREMENTS:
+   * - PUT /settings/security
+   * - Headers: { Authorization: "Bearer <token>" }
+   * - Body: SecuritySettings
+   * - Response: { success: true, data: SecuritySettings }
+   * 
+   * @param settings - Updated security settings
+   * @returns Updated security settings
+   */
   async updateSecuritySettings(settings: SecuritySettings): Promise<ApiResponse<SecuritySettings>> {
     // TODO: Replace with actual API call
     // return this.request<SecuritySettings>(API_ENDPOINTS.SETTINGS.UPDATE_SECURITY, {
@@ -312,7 +489,7 @@ class ApiClient {
     //   body: JSON.stringify(settings),
     // });
 
-    // Mock implementation for now
+    // Mock implementation - REMOVE when backend is ready
     return new Promise((resolve) => {
       setTimeout(() => {
         resolve({
@@ -323,10 +500,23 @@ class ApiClient {
     });
   }
 
-  // Monitoring Methods
+  // ========================================================================
+  // MONITORING METHODS
+  // ========================================================================
+
+  /**
+   * Get system monitoring data
+   * 
+   * BACKEND REQUIREMENTS:
+   * - GET /monitoring/system
+   * - Headers: { Authorization: "Bearer <token>" }
+   * - Response: { success: true, data: SystemMonitoring }
+   * 
+   * @returns System monitoring data
+   */
   async getSystemMonitoring(): Promise<ApiResponse<SystemMonitoring>> {
     // TODO: Replace with actual API call
-    // Mock implementation for now
+    // Mock implementation - REMOVE when backend is ready
     return new Promise((resolve) => {
       setTimeout(() => {
         resolve({
@@ -344,9 +534,19 @@ class ApiClient {
     });
   }
 
+  /**
+   * Get risk assessment data
+   * 
+   * BACKEND REQUIREMENTS:
+   * - GET /monitoring/risk
+   * - Headers: { Authorization: "Bearer <token>" }
+   * - Response: { success: true, data: RiskAssessment }
+   * 
+   * @returns Risk assessment data
+   */
   async getRiskAssessment(): Promise<ApiResponse<RiskAssessment>> {
     // TODO: Replace with actual API call
-    // Mock implementation for now
+    // Mock implementation - REMOVE when backend is ready
     return new Promise((resolve) => {
       setTimeout(() => {
         resolve({
@@ -365,10 +565,23 @@ class ApiClient {
     });
   }
 
-  // Reports Methods
+  // ========================================================================
+  // REPORTS METHODS
+  // ========================================================================
+
+  /**
+   * Get list of reports
+   * 
+   * BACKEND REQUIREMENTS:
+   * - GET /reports
+   * - Headers: { Authorization: "Bearer <token>" }
+   * - Response: { success: true, data: Report[] }
+   * 
+   * @returns List of reports
+   */
   async getReports(): Promise<ApiResponse<Report[]>> {
     // TODO: Replace with actual API call
-    // Mock implementation for now
+    // Mock implementation - REMOVE when backend is ready
     return new Promise((resolve) => {
       setTimeout(() => {
         resolve({
@@ -383,7 +596,6 @@ class ApiClient {
               generatedAt: '2024-05-15',
               downloadUrl: '/reports/1/download',
             },
-            // Add more mock reports...
           ],
         });
       }, 500);
@@ -391,36 +603,70 @@ class ApiClient {
   }
 }
 
-// Export singleton instance
+// ============================================================================
+// EXPORT SINGLETON INSTANCE
+// ============================================================================
+
+/**
+ * Singleton API client instance
+ * Use this throughout the application
+ */
 export const apiClient = new ApiClient();
 
-// Export individual service methods for easier use
+// ============================================================================
+// SERVICE EXPORTS (For easier imports)
+// ============================================================================
+
+/**
+ * Authentication service
+ * Usage: import { authService } from '@/lib/api'
+ */
 export const authService = {
   login: (credentials: LoginRequest) => apiClient.login(credentials),
   register: (userData: RegisterRequest) => apiClient.register(userData),
   logout: () => apiClient.logout(),
 };
 
+/**
+ * Dashboard service
+ * Usage: import { dashboardService } from '@/lib/api'
+ */
 export const dashboardService = {
   getStats: () => apiClient.getDashboardStats(),
 };
 
+/**
+ * Transaction service
+ * Usage: import { transactionService } from '@/lib/api'
+ */
 export const transactionService = {
   getAll: (filters?: TransactionFilters, page?: number, limit?: number) =>
     apiClient.getTransactions(filters, page, limit),
   getById: (id: string) => apiClient.getTransactionDetails(id),
 };
 
+/**
+ * Alert service
+ * Usage: import { alertService } from '@/lib/api'
+ */
 export const alertService = {
   getAll: (filters?: AlertFilters, page?: number, limit?: number) =>
     apiClient.getAlerts(filters, page, limit),
 };
 
+/**
+ * Settings service
+ * Usage: import { settingsService } from '@/lib/api'
+ */
 export const settingsService = {
   getSecurity: () => apiClient.getSecuritySettings(),
   updateSecurity: (settings: SecuritySettings) => apiClient.updateSecuritySettings(settings),
 };
 
+/**
+ * Monitoring service
+ * Usage: import { monitoringService } from '@/lib/api'
+ */
 export const monitoringService = {
   getSystemStatus: () => apiClient.getSystemMonitoring(),
   getRiskAssessment: () => apiClient.getRiskAssessment(),
