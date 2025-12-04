@@ -43,13 +43,13 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
             <div className="flex items-center gap-3">
-              <div className="h-12 w-12 bg-primary-600 rounded-xl flex items-center justify-center shadow-md">
+              <div className="h-12 w-12 bg-primary-600 rounded-xl flex items-center justify-center shadow-md hover:scale-110 transition-transform duration-300">
                 <Shield className="h-7 w-7 text-white" />
               </div>
               <div>
                 <span className="text-3xl lg:text-4xl font-bold text-slate-900 tracking-tight">
                   BK Secured
-              </span>
+                </span>
                 <p className="text-sm text-slate-500 -mt-1">Banking Security Platform</p>
               </div>
             </div>
@@ -87,40 +87,40 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
             {/* Left Content */}
-            <div className="text-center lg:text-left order-2 lg:order-1">
+            <div className="text-center lg:text-left order-2 lg:order-1 animate-fade-in-up">
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-bold tracking-tight mb-4 sm:mb-6 text-gray-900 leading-[1.1]">
                 Easy Way to Manage <br className="hidden sm:block" />
                 <span className="text-primary-600">Your Banking</span>
             </h1>
-              <p className="text-lg sm:text-xl md:text-xl lg:text-2xl text-gray-600 mb-6 sm:mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+              <p className="text-lg sm:text-xl md:text-xl lg:text-2xl text-gray-600 mb-6 sm:mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0 animate-fade-in-up animate-delay-100">
                 Experience modern banking with real-time balance tracking, instant transfers, and advanced security. Your money, your control.
             </p>
-              <div className="flex flex-col sm:flex-row items-center lg:items-start gap-3 sm:gap-4 mb-8 sm:mb-10">
+              <div className="flex flex-col sm:flex-row items-center lg:items-start gap-3 sm:gap-4 mb-8 sm:mb-10 animate-fade-in-up animate-delay-200">
               <Link
                 href="/auth/signup"
-                  className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-primary-600 hover:bg-primary-700 text-white rounded-xl font-semibold text-base sm:text-lg transition-all shadow-lg hover:shadow-xl flex items-center justify-center gap-2"
+                  className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-primary-600 hover:bg-primary-700 text-white rounded-xl font-semibold text-base sm:text-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 flex items-center justify-center gap-2 group"
               >
                   Open Account
-                  <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5" />
+                  <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform duration-300" />
               </Link>
               <Link
                   href="/auth/signin"
-                  className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-white hover:bg-gray-50 text-gray-900 rounded-xl font-semibold text-base sm:text-lg transition-all border-2 border-gray-300 hover:border-gray-400 shadow-sm"
+                  className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-white hover:bg-gray-50 text-gray-900 rounded-xl font-semibold text-base sm:text-lg transition-all duration-300 border-2 border-gray-300 hover:border-gray-400 shadow-sm hover:scale-105"
               >
                   How It Works
               </Link>
               </div>
               {/* Trust Indicators */}
-              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 sm:gap-6 text-sm sm:text-base text-gray-700">
-                <div className="flex items-center gap-2">
+              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 sm:gap-6 text-sm sm:text-base text-gray-700 animate-fade-in-up animate-delay-300">
+                <div className="flex items-center gap-2 hover:scale-105 transition-transform duration-300">
                   <CheckCircle className="h-4 w-4 sm:h-5 sm:w-5 text-green-600" />
                   <span className="font-medium">FDIC Insured</span>
                 </div>
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-2 hover:scale-105 transition-transform duration-300">
                   <Lock className="h-4 w-4 sm:h-5 sm:w-5 text-gray-800" />
                   <span className="font-medium">256-bit Encryption</span>
                 </div>
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-2 hover:scale-105 transition-transform duration-300">
                   <Shield className="h-4 w-4 sm:h-5 sm:w-5 text-gray-800" />
                   <span className="font-medium">SOC 2 Certified</span>
                 </div>
@@ -128,10 +128,10 @@ export default function Home() {
             </div>
             
             {/* Right Visual - Enhanced Banking App Mockup */}
-            <div className="relative order-1 lg:order-2">
+            <div className="relative order-1 lg:order-2 animate-slide-in-right animate-delay-200">
               <div className="relative flex justify-center lg:justify-end">
                 {/* Phone Frame - Responsive Sizing */}
-                <div className="relative mx-auto lg:mx-0 w-64 h-[520px] sm:w-72 sm:h-[580px] md:w-80 md:h-[640px] lg:w-80 lg:h-[680px]">
+                <div className="relative mx-auto lg:mx-0 w-64 h-[520px] sm:w-72 sm:h-[580px] md:w-80 md:h-[640px] lg:w-80 lg:h-[680px] animate-float">
                   {/* Phone Outline */}
                   <div className="absolute inset-0 bg-gradient-to-br from-gray-800 to-gray-900 rounded-[2.5rem] sm:rounded-[3rem] p-1.5 sm:p-2 shadow-2xl">
                     <div className="w-full h-full bg-white rounded-[2rem] sm:rounded-[2.5rem] overflow-hidden relative">
@@ -167,8 +167,8 @@ export default function Home() {
                           ].map((action, i) => {
                             const Icon = action.icon;
                             return (
-                              <div key={i} className="text-center">
-                                <div className={`w-10 h-10 sm:w-12 sm:h-12 ${action.color} rounded-full flex items-center justify-center mx-auto mb-1 sm:mb-2 shadow-sm`}>
+                              <div key={i} className="text-center hover:scale-110 transition-transform duration-300 cursor-pointer">
+                                <div className={`w-10 h-10 sm:w-12 sm:h-12 ${action.color} rounded-full flex items-center justify-center mx-auto mb-1 sm:mb-2 shadow-sm hover:shadow-md transition-shadow duration-300`}>
                                   <Icon className="h-4 w-4 sm:h-5 sm:w-5" />
                                 </div>
                                 <span className="text-[10px] sm:text-xs text-gray-600 font-medium">{action.name}</span>
@@ -201,9 +201,9 @@ export default function Home() {
                               { name: 'Salary Deposit', amount: '+$3,500.00', time: '1d ago', icon: '💰', type: 'income' },
                               { name: 'Coffee Shop', amount: '-$4.75', time: '2d ago', icon: '☕', type: 'expense' }
                             ].map((tx, i) => (
-                              <div key={i} className="flex items-center justify-between p-2 sm:p-3 bg-white rounded-lg border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                              <div key={i} className="flex items-center justify-between p-2 sm:p-3 bg-white rounded-lg border border-gray-100 shadow-sm hover:shadow-md hover:scale-[1.02] transition-all duration-300 cursor-pointer">
                                 <div className="flex items-center gap-2 sm:gap-3 flex-1 min-w-0">
-                                  <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gray-100 rounded-full flex items-center justify-center text-sm sm:text-lg flex-shrink-0">
+                                  <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gray-100 rounded-full flex items-center justify-center text-sm sm:text-lg flex-shrink-0 hover:scale-110 transition-transform duration-300">
                                     {tx.icon}
                                   </div>
                                   <div className="min-w-0 flex-1">
@@ -277,8 +277,8 @@ export default function Home() {
               { icon: Globe, value: "180+", label: "Countries Served", color: "text-blue-600" },
               { icon: Shield, value: "99.99%", label: "Uptime Guarantee", color: "text-primary-600" }
             ].map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-primary-50 rounded-xl mb-4 shadow-sm">
+              <div key={index} className="text-center animate-fade-in-up" style={{ animationDelay: `${index * 0.1}s` }}>
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-primary-50 rounded-xl mb-4 shadow-sm hover:scale-110 hover:shadow-md transition-all duration-300">
                   <stat.icon className={`h-8 w-8 ${stat.color}`} />
                 </div>
                 <div className="text-5xl lg:text-6xl font-bold text-slate-900 mb-2">{stat.value}</div>
@@ -316,8 +316,8 @@ export default function Home() {
                 description: "Biometric authentication, two-factor verification, and behavioral analysis work together to keep your account secure 24/7."
               }
             ].map((feature, index) => (
-              <div key={index} className="p-8 rounded-lg bg-white border border-gray-200 shadow-sm hover:shadow-md transition-all">
-                <div className="h-16 w-16 bg-gray-100 rounded-lg flex items-center justify-center mb-6">
+              <div key={index} className="p-8 rounded-lg bg-white border border-gray-200 shadow-sm hover:shadow-md hover:scale-[1.02] transition-all duration-300 animate-fade-in-up" style={{ animationDelay: `${index * 0.15}s` }}>
+                <div className="h-16 w-16 bg-gray-100 rounded-lg flex items-center justify-center mb-6 hover:scale-110 hover:bg-primary-50 transition-all duration-300">
                   <feature.icon className="h-8 w-8 text-gray-800" />
                 </div>
                 <h3 className="text-3xl font-bold text-gray-900 mb-4">{feature.title}</h3>
